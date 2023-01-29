@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class ColourDetailActivity extends AppCompatActivity {
+//    TODO: Populate this class
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

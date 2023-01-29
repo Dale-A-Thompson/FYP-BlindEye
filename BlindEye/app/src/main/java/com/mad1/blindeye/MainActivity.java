@@ -15,8 +15,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+import views.ColourListPage;
+import views.PaletteListPage;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, ViewPager.OnPageChangeListener,
-        ColorItemListPage.Listener, PalletteListPage.Listener {
+        ColourListPage.Listener, PaletteListPage.Listener {
+//    TODO: Create the Listeners in the respective classes to be rid of the red lined errors.
+
 
     @IntDef({PAGE_ID_COLOUR_ITEM_LIST, PAGE_ID_PALETTE_LIST})
     @Retention(RetentionPolicy.SOURCE)
@@ -46,11 +51,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ViewPager viewPager;
 
     //TO DISPLAY THE ColourListPage IN THE ViewPager
-//    TODO: Create ColourListPage in views package
     private ColourListPage colourListPage;
 
     //TO DISPLAY THE PaletteListPage IN THE ViewPager
-    //    TODO: Create PaletteListPage in views package
     private PaletteListPage paletteListPage;
 
     //ID OF CURRENT PAGE
