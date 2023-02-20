@@ -5,5 +5,49 @@
     android:layout_height="match_parent"
     tools:context=".ColourDetailActivity">
 
+    <views.ColourBlobView
+        android:id="@+id/activity_colour_detail_prev_translating"
+        android:layout_width="@dimen/palette_thumbnail_size"
+        android:layout_height="@dimen/palette_thumbnail_size"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/palette_thumbnail_halved"
+        android:background="@drawable/oval_white_shape" />
+
+    <FrameLayout
+        android:id="@+id/activity_colour_detail_prev_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_palette_detail_height">
+
+        <View
+            android:id="@+id/activity_colour_detail_prev_scaling"
+            android:layout_width="@dimen/preview_size"
+            android:layout_height="@dimen/preview_size"
+            android:layout_gravity="center"
+            android:background="@drawable/oval_white_shape"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_palette_detail_height">
+
+        <views.ColourItemDetailView
+            android:id="@+id/activity_colour_list_detail_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            tools:visibility="visible" />
+    </ScrollView>
+
+    <View
+        android:id="@+id/activity_colour_list_detail_view_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginTop="@dimen/activity_palette_detail_height"
+        android:background="@drawable/linear_gradient"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
 
 </merge>

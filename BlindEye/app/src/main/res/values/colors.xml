@@ -14,4 +14,9 @@
 
     <color name="main_activity_bg_colour">#EEEEEE</color>
     <color name="black_shadow">#330000</color>
+
+    <!--    Colour Quantity Bar Colours-->
+    <color name="colour_quantity_bar_default_bar">#9A9A9A</color>
+    <color name="colour_quantity_bar_default_bar_over">#555555</color>
+    <color name="colour_quantity_bar_default_bar_thumb">#555555</color>
 </resources>

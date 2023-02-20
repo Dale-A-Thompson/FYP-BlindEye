@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="default_halved">8dp</dimen>
+
+    <!--    activity palette dimens-->
+    <dimen name="activity_palette_detail_height">150dp</dimen>
+
+    <!--    dimens for colour item rows-->
+    <dimen name="preview_size">40dp</dimen>
+    <dimen name="preview_size_shadow_size">3dp</dimen>
+    <dimen name="shadow_size">3dp</dimen>
+
+    <!--    dimens for colour palette rows-->
+    <dimen name="palette_thumbnail_size">75dp</dimen>
+    <dimen name="palette_thumbnail_halved">37dp</dimen>
+
+    <!--   dimens for delete colour fragment-->
+    <dimen name="delete_colour_fragment_message">16dp</dimen>
+
+    <!--    dimens for delete palette fragment-->
+    <dimen name="delete_palette_fragment_message">16dp</dimen>
+
+    <dimen name="colour_picker_bar_height">72dp</dimen>
+    <dimen name="colour_picker_bar_halved">36dp</dimen>
+
     <dimen name="main_activity_tab_indicator_height">4dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="shadow_size">3dp</dimen>
+
+    <dimen name="shadow_inset_padding">8dp</dimen>
 </resources>
