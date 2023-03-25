@@ -125,6 +125,7 @@ public class ColourItem implements Parcelable {
         return "#" + Integer.toHexString(val).substring(2);
     }
 
+    //Pre-existing methods
     @Override
     public int describeContents() {
         return 0;
@@ -138,6 +139,7 @@ public class ColourItem implements Parcelable {
         dest.writeString(this.mName);
     }
 
+    //A Creator used to create a ColourItem from the Parcel
     public static final Creator<ColourItem> CREATOR = new Creator<ColourItem>() {
         @Override
         public ColourItem createFromParcel(Parcel source) {

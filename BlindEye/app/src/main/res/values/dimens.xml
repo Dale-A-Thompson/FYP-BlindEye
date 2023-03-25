@@ -28,4 +28,10 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="shadow_inset_padding">8dp</dimen>
+
+    <!--    dimes for colour item rows-->
+    <dimen name="colour_row_item_size_prev">50dp</dimen>
+
+    <dimen name="colour_row_item_size">88dp</dimen>
+    <dimen name="colour_palette_item_size">88dp</dimen>
 </resources>
