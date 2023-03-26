@@ -1,9 +1,9 @@
 package wrappers;
 
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
@@ -12,11 +12,11 @@ import data.ColourItem;
 public abstract class ColourItemListWrapper {
 
     protected final RecyclerView mRecyclerView;
-    protected final ColourItemListWrapperListener listWrapperListener;
+    protected final ColourItemListWrapperListener mListener;
 
     protected ColourItemListWrapper(RecyclerView recyclerView, ColourItemListWrapperListener colourItemListWrapperListener) {
         mRecyclerView = recyclerView;
-        listWrapperListener = colourItemListWrapperListener;
+        mListener = colourItemListWrapperListener;
     }
 
     //installing a Recycler View Layout Manager and an Adapter on the Recycler View

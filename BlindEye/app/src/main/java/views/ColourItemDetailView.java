@@ -38,7 +38,6 @@ public class ColourItemDetailView extends LinearLayout {
 
     public void setColourItem(ColourItem colourItem) {
         final int colour = colourItem.getColour();
-//        TODO: Create method in ColourItem
 
         mQuantityBarRed.setValue(Color.red(colour) / 255f);
         mQuantityBarGreen.setValue(Color.green(colour) / 255f);
