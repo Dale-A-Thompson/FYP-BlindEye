@@ -49,7 +49,7 @@ public class Palette implements Parcelable {
     }
 
     //Getting the ID of the Palette
-    public long getId() {
+    public long getID() {
         return mId;
     }
 
