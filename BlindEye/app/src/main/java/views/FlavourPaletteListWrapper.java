@@ -68,7 +68,6 @@ public class FlavourPaletteListWrapper extends PaletteListWrapper {
         public void bind(Palette palette) {
             mPalette = palette;
             mPaletteThumbnail.setPalette(palette);
-//            TODO: Populate PaletteView class
         }
 
         @Override

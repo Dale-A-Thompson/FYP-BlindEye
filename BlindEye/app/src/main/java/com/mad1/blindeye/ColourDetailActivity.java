@@ -12,9 +12,11 @@ import android.view.View;
 
 import data.ColourItem;
 import data.Palette;
+import fragments.DeleteColourDialogFragment;
+import fragments.EditTextDialogFragment;
 import views.ColourItemDetailView;
 
-public class ColourDetailActivity extends AppCompatActivity implements DeleteColourFragment.Callback,
+public class ColourDetailActivity extends AppCompatActivity implements DeleteColourDialogFragment.Callback,
         EditTextDialogFragment.Callback {
 
     //Passing a colour as an extra

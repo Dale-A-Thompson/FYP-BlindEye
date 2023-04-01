@@ -1,12 +1,9 @@
 <resources>
     <string name="app_name">Blind Eye</string>
     <string name="title_activity_colour_detail">ColourDetailActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <!-- Dialog Fragment About -->
+    <string name="about_dialog_name">Blind Eye</string>
+    <string name="about_dialog_message">Blind Eye is an application that enables younger people to identify colours by tapping their screen on the desired colour.</string>
+    <string name="about_dialog_by">Made by Dale Thompson - K00252533. As part of my Final Year Project.</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
