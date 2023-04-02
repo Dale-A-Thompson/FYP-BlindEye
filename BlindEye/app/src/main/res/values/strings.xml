@@ -5,5 +5,6 @@
     <string name="about_dialog_name">Blind Eye</string>
     <string name="about_dialog_message">Blind Eye is an application that enables younger people to identify colours by tapping their screen on the desired colour.</string>
     <string name="about_dialog_by">Made by Dale Thompson - K00252533. As part of my Final Year Project.</string>
+    <string name="define_colour">Define colour</string>
 
 </resources>
