@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:minWidth="300dp"
+    android:orientation="vertical">
+
+    <views.PaletteView
+        android:id="@+id/delete_palette_prev_dialog_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="56dp" />
+
+    <ImageView
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:layout_margin="@dimen/default_padding"
+        android:src="@drawable/ic_warning"
+        app:tint="#AB0000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_padding"
+        android:layout_marginBottom="@dimen/default_padding"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <views.PaletteSquare
+            android:id="@+id/delete_palette_prev_small_dialog_fragment"
+            android:layout_width="@dimen/colour_row_item_size_prev"
+            android:layout_height="@dimen/colour_row_item_size_prev"
+            android:layout_gravity="center"
+            android:background="@drawable/square_shadow" />
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_arrow_right"
+            app:tint="#585858" />
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_delete_action"
+            app:tint="#585858" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <ImageView
+            android:id="@+id/delete_palette_dialog_fragment_cancel_btn"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:background="?selectableItemBackground"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_close" />
+
+        <ImageView
+            android:id="@+id/delete_palette_dialog_fragment_validate_btn"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:background="?selectableItemBackground"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_check" />
+
+    </LinearLayout>
+</LinearLayout>

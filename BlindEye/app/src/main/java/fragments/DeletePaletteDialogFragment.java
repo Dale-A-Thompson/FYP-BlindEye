@@ -55,7 +55,7 @@ public class DeletePaletteDialogFragment extends DialogFragment {
         }
 
         final Palette palette = args.getParcelable(PALETTE_ARG);
-        return DeletePaletteDialogFragmentFlavour.createDialog(getContext(), palette, mCallback);
+        return DeletePaletteDialogFragmentFlavour.dialogCreation(getContext(), palette, mCallback);
     }
 
     @Override
@@ -67,6 +67,6 @@ public class DeletePaletteDialogFragment extends DialogFragment {
     //interface for callbacks
     public interface Callback {
         //called when Palette deletion is confirmed by user
-        void onDeletionConfirmedP();
+        void onDeletionConfirmedP(@NonNull Palette palette);
     }
 }

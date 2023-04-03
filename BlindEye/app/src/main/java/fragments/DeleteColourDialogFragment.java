@@ -56,7 +56,7 @@ public class DeleteColourDialogFragment extends DialogFragment {
         final ColourItem colourItem = args.getParcelable(COLOUR_ITEM_ARG);
         final Context context = getActivity();
 
-        return DeleteColourDialogFragmentFlavour.createDialog(context, mCallback, colourItem);
+        return DeleteColourDialogFragmentFlavour.dialogCreation(context, mCallback, colourItem);
     }
 
     @Override
@@ -68,6 +68,6 @@ public class DeleteColourDialogFragment extends DialogFragment {
     //interface for callbacks
     public interface Callback {
         //called when deletion of ColourItem is confirmed by user
-        void onDeletionConfirmedC();
+        void onDeletionConfirmedC(@NonNull ColourItem colourItem);
     }
 }
