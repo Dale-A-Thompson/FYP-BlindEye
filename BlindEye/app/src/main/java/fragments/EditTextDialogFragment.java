@@ -9,15 +9,15 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
-import android.support.v4.app.DialogFragment;
+//import android.support.v4.app.DialogFragment;
 import android.text.TextUtils;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import androidx.fragment.app.DialogFragment;
 
 import com.mad1.blindeye.R;
 
@@ -67,6 +67,7 @@ public class EditTextDialogFragment extends DialogFragment {
         editTextDialogFragment.setArguments(bundle);
         return editTextDialogFragment;
     }
+
 
     //a callback that'll be notified for EditTextDialogFragment
     private Callback mCallback;
@@ -135,38 +136,22 @@ public class EditTextDialogFragment extends DialogFragment {
         builder.setView(view).setTitle(titleResID).setCancelable(true)
                 //don't want positive button to dismiss the alert dialog all the time
                 .setPositiveButton(posButtonResID, null)
-                .setNegativeButton(negButtonResID, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        handleNegBtnClick();
-                    }
-                });
+                .setNegativeButton(negButtonResID, (dialog, which) -> handleNegBtnClick());
 
         //setting positive button onClickListener
         final AlertDialog dialog = builder.create();
-        dialog.setOnShowListener(new DialogInterface.OnShowListener() {
-            @Override
-            public void onShow(DialogInterface dialogInterface) {
-                final Button posBtn = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
-                posBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        handlePosBtnClick();
-                    }
-                });
-            }
+        dialog.setOnShowListener(dialogInterface -> {
+            final Button posBtn = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
+            posBtn.setOnClickListener(v -> handlePosBtnClick());
         });
 
         //user presses the ime action done, it is considered a positive click
-        mEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    handlePosBtnClick();
-                    return true;
-                }
-                return false;
+        mEditText.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                handlePosBtnClick();
+                return true;
             }
+            return false;
         });
 
         return dialog;

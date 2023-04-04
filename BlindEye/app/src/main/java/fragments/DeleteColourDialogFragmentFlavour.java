@@ -1,6 +1,9 @@
 package fragments;
 
-import android.app.AlertDialog;
+//import android.app.AlertDialog;
+
+import androidx.appcompat.app.AlertDialog;
+
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.PorterDuff;

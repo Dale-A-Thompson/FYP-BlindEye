@@ -7,4 +7,18 @@
     <string name="about_dialog_by">Made by Dale Thompson - K00252533. As part of my Final Year Project.</string>
     <string name="define_colour">Define colour</string>
 
+    <!--    Menu strings-->
+    <string name="contact_us_main_menu">Contact Us</string>
+    <string name="about_main_menu">About</string>
+    <string name="flash">Flash</string>
+    <string name="share_main_menu">Share</string>
+    <string name="edit_main_menu">Edit</string>
+    <string name="delete_main_menu">Delete</string>
+    <string name="share_palette_menu">Share</string>
+    <string name="edit_palette_menu">Edit</string>
+    <string name="delete_palette_menu">Delete</string>
+
+    <string name="colour_detail_activity_edit_text_dialog_fragment">Edit the Colour Name</string>
+    <string name="colour_detail_activity_edit_text_dialog_fragment_pos_button">Edit</string>
+
 </resources>

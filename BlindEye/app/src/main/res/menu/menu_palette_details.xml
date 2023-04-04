@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mad1.blindeye.PaletteDetailActivity">
+
+    <item
+        android:id="@+id/palette_detail_share_menu"
+        android:icon="@drawable/ic_share"
+        android:orderInCategory="10"
+        android:title="@string/share_palette_menu"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/palette_detail_edit_menu"
+        android:icon="@drawable/ic_edit"
+        android:orderInCategory="50"
+        android:title="@string/edit_palette_menu"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/palette_detail_delete_menu"
+        android:icon="@drawable/ic_delete_action"
+        android:orderInCategory="100"
+        android:title="@string/delete_palette_menu"
+        app:showAsAction="ifRoom" />
+
+</menu>
