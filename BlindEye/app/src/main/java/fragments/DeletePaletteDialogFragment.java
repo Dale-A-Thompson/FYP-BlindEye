@@ -17,7 +17,7 @@ public class DeletePaletteDialogFragment extends DialogFragment {
     private static final String PALETTE_ARG = "DeletePaletteDialogFragment.Args.PALETTE_ARG";
 
     //new instance of a DeletePaletteDialogFragment to ask user to confirm Palette deletion
-    private static DeletePaletteDialogFragment newFragmentInstance(Palette palette) {
+    public static DeletePaletteDialogFragment newFragmentInstance(Palette palette) {
         final DeletePaletteDialogFragment deletePaletteDialogFragment = new DeletePaletteDialogFragment();
         final Bundle bundle = new Bundle();
         bundle.putParcelable(PALETTE_ARG, palette);
@@ -35,7 +35,7 @@ public class DeletePaletteDialogFragment extends DialogFragment {
     }
 
     @Override
-    public void onAttach(Activity activity) {
+    public void onAttach(@androidx.annotation.NonNull Activity activity) {
         super.onAttach(activity);
 
         if (activity instanceof Callback) {

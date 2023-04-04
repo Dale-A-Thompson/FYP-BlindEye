@@ -21,4 +21,8 @@
     <string name="colour_detail_activity_edit_text_dialog_fragment">Edit the Colour Name</string>
     <string name="colour_detail_activity_edit_text_dialog_fragment_pos_button">Edit</string>
 
+    <string name="palette_detail_activity_edit_text_dialog_fragment">Edit the Colour Palette</string>
+    <string name="palette_detail_activity_edit_text_dialog_fragment_hint">Your Cool Palette</string>
+    <string name="palette_detail_activity_edit_text_dialog_fragment_pos_button">Edit</string>
+
 </resources>

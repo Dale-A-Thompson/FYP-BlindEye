@@ -6,7 +6,9 @@
 
     <views.PaletteSquare
         android:id="@+id/palette_row_thumbnail"
-<!--        TODO: Popluate PaletteSquare Class, note, these class names are by no means FINAL, though some might be, not all, same goes for methods/variables-->
-        />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/square_shadow" />
 
 </FrameLayout>
