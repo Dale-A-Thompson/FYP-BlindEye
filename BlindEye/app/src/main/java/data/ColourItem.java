@@ -109,19 +109,19 @@ public class ColourItem implements Parcelable {
     }
 
     //Creating the Readable HSV Value of the Colour
-    private String createHSVString(int val) {
+    public static String createHSVString(int val) {
         float[] hsv = new float[3];
         Color.colorToHSV(val, hsv);
         return "HSV(" + (int) hsv[0] + "°, " + (int) (hsv[1] * 100) + "%, " + (int) (hsv[2] * 100) + "%)";
     }
 
     //Creating the Readable RGB Value of the Colour
-    private String createRGBString(int val) {
+    public static String createRGBString(int val) {
         return "RGB(" + Color.red(val) + ", " + Color.green(val) + ", " + Color.blue(val) + ")";
     }
 
     //Creating the Readable Hexadecimal Value of the Colour
-    private String createHexString(int val) {
+    public static String createHexString(int val) {
         return "#" + Integer.toHexString(val).substring(2);
     }
 

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ColourTapMainActivity">
+
+    <FrameLayout
+        android:id="@+id/activity_colour_selected_prev_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/colour_picker_bar_height"
+        tools:background="#808080">
+
+        <View
+            android:id="@+id/activity_colour_selected_ring"
+            android:layout_width="@dimen/colour_selected_ring_size"
+            android:layout_height="@dimen/colour_selected_ring_size"
+            android:layout_gravity="center"
+            android:background="@drawable/ring_pointer" />
+
+        <View
+            android:id="@+id/activity_colour_selected_ring_main"
+            android:layout_width="@dimen/colour_selected_ring_size"
+            android:layout_height="@dimen/colour_selected_ring_size"
+            android:layout_gravity="center"
+            android:background="@drawable/pointer" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/activity_selected_colour_selected_save_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/colour_saved_msg"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/activity_selected_colour_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/colour_picker_bar_height"
+        android:layout_gravity="bottom">
+
+        <View
+            android:id="@+id/activity_selected_colour_prev"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/oval_white_shape" />
+
+        <TextView
+            android:id="@+id/activity_selected_colour_prev_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@id/activity_colour_selected_button_save"
+            android:layout_toLeftOf="@id/activity_colour_selected_button_save"
+            android:layout_toEndOf="@id/activity_selected_colour_prev"
+            android:layout_toRightOf="@id/activity_selected_colour_prev"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/abc_primary_text_material_light"
+            tools:text="#FF4455" />
+
+        <ImageButton
+            android:id="@+id/activity_colour_selected_button_save"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_saved" />
+
+        <ImageView
+            android:id="@+id/activity_colour_selected_save_complete"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="center"
+            android:src="@drawable/ic_check" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/activity_colour_selected_anim_prev"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/colour_picker_bar_halved"
+        android:background="@drawable/oval_white_shape"
+        android:visibility="invisible" />
+
+
+</FrameLayout>
