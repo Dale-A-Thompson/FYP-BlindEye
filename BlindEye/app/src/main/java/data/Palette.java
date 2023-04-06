@@ -41,7 +41,7 @@ public class Palette implements Parcelable {
     }
 
     //Adding a link for ColourItem to the Palette
-    public void addColour(ColourItem colourItem) {
+    public void colourToPalette(ColourItem colourItem) {
         if (colourItem == null) {
             throw new IllegalStateException("Colour item cannot be null");
         }

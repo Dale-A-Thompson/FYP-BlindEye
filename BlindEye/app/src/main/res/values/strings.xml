@@ -26,4 +26,6 @@
     <string name="palette_detail_activity_edit_text_dialog_fragment_pos_button">Edit</string>
     <string name="colour_saved_msg">Colour Saved!</string>
 
+    <string name="activity_palette_maker_default_name_for_palette">Palette %d</string>
+
 </resources>

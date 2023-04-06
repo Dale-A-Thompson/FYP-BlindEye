@@ -90,14 +90,14 @@ public class PaletteCreatorView extends View {
     }
 
     //Checking if there are any ColourItems to be added to the PaletteMakerView
-//    public boolean isEmpty() {
-//        return mColourItemList.isEmpty();
-//    }
+    public boolean isEmpty() {
+        return mColourItemList.isEmpty();
+    }
 
     //Getting number of ColourItems added to the PaletteMakerView
-//    public int size() {
-//        return mColourItemList.size();
-//    }
+    public int size() {
+        return mColourItemList.size();
+    }
 
     //Create a Palette with the ColourItem(s) that were added
     public Palette create(String pName) {
