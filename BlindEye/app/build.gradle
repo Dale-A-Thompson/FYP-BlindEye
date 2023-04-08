@@ -30,11 +30,6 @@ android {
     flavorDimensions "store", "user"
 
     productFlavors {
-        googleplay {
-            versionCode 8
-            versionName "gp-0.0.8"
-            dimension "store"
-        }
 
         foss {
             versionCode 8

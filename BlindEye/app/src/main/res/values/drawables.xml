@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="ic_fab_action">@drawable/ic_fab_foreground</drawable>
+    <drawable name="ic_palette_action">@drawable/ic_palette_action</drawable>
+</resources>

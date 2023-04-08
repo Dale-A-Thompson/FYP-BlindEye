@@ -4,9 +4,8 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-//import android.support.v4.app.DialogFragment;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
 import data.Palette;

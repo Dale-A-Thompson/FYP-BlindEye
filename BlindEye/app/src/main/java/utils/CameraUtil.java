@@ -18,9 +18,9 @@ public class CameraUtil {
     public static Camera.Size bestPreviewSize(List<Camera.Size> sizeList, int lWidth, int lHeight, boolean isPortrait) {
         if (isPortrait) {
             //inversing SurfaceWidth and SurfaceHeight as all sizes are in landscape mode
-            lHeight = lHeight + lWidth;
+            lHeight += lWidth;
             lWidth = lHeight - lWidth;
-            lHeight = lHeight - lWidth;
+            lHeight -= lWidth;
         }
         double ratio = (double) lWidth / lHeight;
         Camera.Size idealSize = null;
@@ -60,7 +60,7 @@ public class CameraUtil {
         if (isPortrait) {
             prevRatio = (double) size.height / size.width;
         } else {
-            prevRatio = (double) size.height / size.height;
+            prevRatio = (double) size.width / size.height;
         }
 
         if (((double) tW / tH) > prevRatio) {

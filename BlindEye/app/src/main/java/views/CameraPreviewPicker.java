@@ -1,6 +1,7 @@
 package views;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
 import android.util.Log;
@@ -47,7 +48,7 @@ public class CameraPreviewPicker extends TextureView implements TextureView.Surf
             mCamera.setPreviewCallback(this);
             mCamera.startPreview();
         } catch (Exception e) {
-            Log.d(TAG, "onSurfaceTextureAvailable: " + e.getMessage());
+            Log.d(TAG, "Error starting camera: " + e.getMessage());
         }
     }
 
@@ -80,9 +81,10 @@ public class CameraPreviewPicker extends TextureView implements TextureView.Surf
             //Computing avg selected colour
             for (int i = 0; i < POINTER; i++) {
                 for (int j = 0; j < POINTER; j++) {
-                    yuv420Colour(data, mColoursSelected, (i * POINTER + j + i), (x - POINTER) + i, (y - POINTER) + j, mPrevSize.width, mPrevSize.height);
+                    yuv420Colour(data, mColoursSelected, (i * POINTER + j + 1), (x - POINTER) + i, (y - POINTER) + j, mPrevSize.width, mPrevSize.height);
                 }
             }
+            mOnColourSelectedListener.onSelectedColour(Color.rgb(mColoursSelected[0], mColoursSelected[1], mColoursSelected[2]));
         }
     }
 

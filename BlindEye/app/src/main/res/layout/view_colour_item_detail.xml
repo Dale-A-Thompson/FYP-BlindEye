@@ -44,6 +44,7 @@
 
         <views.ColourQuantityBar
             android:id="@+id/quantity_bar_green"
+            style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:layout_gravity="center_vertical"
@@ -68,6 +69,7 @@
 
         <views.ColourQuantityBar
             android:id="@+id/quantity_bar_blue"
+            style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:layout_gravity="center_vertical"

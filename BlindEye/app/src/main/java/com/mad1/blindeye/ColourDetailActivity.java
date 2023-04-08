@@ -27,6 +27,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 import com.mad1.blindeye.R;
 
@@ -118,8 +119,9 @@ public class ColourDetailActivity extends AppCompatActivity implements DeleteCol
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colour_detail);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
+        //ensuring the extras are correct
         final Intent intent = getIntent();
         if (!intent.hasExtra(EXTRA_COLOUR_ITEM) || !intent.hasExtra(EXTRA_START_BOUNDS) || !intent.hasExtra(EXTRA_PALETTE)) {
             throw new IllegalStateException("Missing extras. Please use startingColourItem.");
@@ -256,7 +258,7 @@ public class ColourDetailActivity extends AppCompatActivity implements DeleteCol
 
         //noinspection if statement
         if (id == R.id.colour_detail_delete_menu) {
-            DeleteColourDialogFragment.newFragmentInstance(mColourItem).show(getSupportFragmentManager(), null); //TODO: having issues implementing show();
+            DeleteColourDialogFragment.newFragmentInstance(mColourItem).show(getSupportFragmentManager(), null);
             return true;
         } else if (id == android.R.id.home) {
             finish();

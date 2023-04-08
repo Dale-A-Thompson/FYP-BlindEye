@@ -18,7 +18,7 @@ public class ColourTapActivity extends ColourTapMainActivity {
 
         //AnimationUtils is an in built class
         shake = AnimationUtils.loadAnimation(this, R.anim.shaker);
-        mColourSelectedPreviewText.setVisibility(View.INVISIBLE);
+//        mColourSelectedPreviewText.setVisibility(View.INVISIBLE);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -35,8 +35,15 @@ public class ColourTapActivity extends ColourTapMainActivity {
     @Override
     protected void settingCompleteSave(boolean b) {
         super.settingCompleteSave(b);
+
+
         if (b) {
             mSelectedColour.setVisibility(View.INVISIBLE);
+//            mCompletedSaveMsg.setVisibility(View.VISIBLE);
+//            mCompletedSaveMsg.animate().translationY(0).setDuration(SAVED_COLOUR_DURATION)
+//                    .setInterpolator(mCompletedSaveMsgInter).start();
+//            mCompletedSaveMsg.removeCallbacks(mCompletedSaveMsgHide);
+//            mCompletedSaveMsg.postDelayed(mCompletedSaveMsgHide, HIDDEN_MESSAGE_DELAY);
             finish();
         }
     }

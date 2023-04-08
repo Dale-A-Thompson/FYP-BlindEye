@@ -26,6 +26,6 @@ public class PaletteSquare extends PaletteView {
         int h = MeasureSpec.getSize(heightMeasureSpec);
         int size = Math.min(w, h);
         int mSpec = MeasureSpec.makeMeasureSpec(size, MeasureSpec.EXACTLY);
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        super.onMeasure(mSpec, mSpec);
     }
 }

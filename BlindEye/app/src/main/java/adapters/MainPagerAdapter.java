@@ -2,12 +2,12 @@ package adapters;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.core.content.ContextCompat;
+import androidx.viewpager.widget.PagerAdapter;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.mad1.blindeye.R;

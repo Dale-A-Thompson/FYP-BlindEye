@@ -1,11 +1,13 @@
 package views;
 
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.mad1.blindeye.R;
 
@@ -13,7 +15,6 @@ import data.Palette;
 import wrappers.PaletteListWrapper;
 
 //Flavour PaletteListWrapper
-//TODO: Add comments to the start of every Java Class to say what they are for
 public class FlavourPaletteListWrapper extends PaletteListWrapper {
 
     //Creating a FlavourPaletteListWrapper
@@ -34,6 +35,7 @@ public class FlavourPaletteListWrapper extends PaletteListWrapper {
             super(paletteListWrapperListener);
         }
 
+        @NonNull
         @Override
         public PaletteHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             final View view = LayoutInflater.from(parent.getContext())
@@ -60,7 +62,6 @@ public class FlavourPaletteListWrapper extends PaletteListWrapper {
             mUnderLyingView = view;
             mListener = listener;
             mPaletteThumbnail = (PaletteView) view.findViewById(R.id.palette_row_thumbnail);
-            //TODO: Populate PaletteView class
 
             view.setOnClickListener(this);
         }

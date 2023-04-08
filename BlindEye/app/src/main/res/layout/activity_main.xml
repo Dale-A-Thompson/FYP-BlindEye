@@ -34,6 +34,12 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="8dp"
+            android:background="@drawable/linear_gradient" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/activity_main_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="@color/main_activity_bg_colour" />
 
         <com.melnykov.fab.FloatingActionButton
@@ -42,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
-            android:src="@drawable/ic_fab_colour_picker_foreground"
+            android:src="@drawable/ic_fab_action"
             app:fab_colorNormal="@color/Haiti"
             app:fab_colorPressed="@color/Haiti"
             app:fab_colorRipple="?attr/colorControlHighlight" />

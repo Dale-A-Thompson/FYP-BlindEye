@@ -1,16 +1,16 @@
 package com.mad1.blindeye;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewTreeObserver;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.melnykov.fab.FloatingActionButton;
 
@@ -74,7 +74,7 @@ public abstract class PaletteMakerMainActivity extends AppCompatActivity impleme
                 @Override
                 public boolean onPreDraw() {
                     final ViewTreeObserver treeObserver = mFloatingActionButton.getViewTreeObserver();
-                    viewTreeObserver.removeOnPreDrawListener(this);
+                    treeObserver.removeOnPreDrawListener(this);
 
                     mHideFabTransY = ((View) mFloatingActionButton.getParent()).getHeight() - mFloatingActionButton.getTop();
                     mFloatingActionButton.setTranslationY(mHideFabTransY);
@@ -121,5 +121,6 @@ public abstract class PaletteMakerMainActivity extends AppCompatActivity impleme
         }
     }
 
+    //create a palette, this is called when the user wants to make a palette
     protected abstract void makePalette(PaletteCreatorView paletteCreatorView);
 }

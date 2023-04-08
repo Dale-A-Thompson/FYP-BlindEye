@@ -61,8 +61,8 @@ public class PaletteView extends View {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
         final int top = getPaddingTop();
-        final int right = getPaddingRight();
-        final int bottom = getPaddingBottom();
+        final int right = getMeasuredWidth() - getPaddingRight();
+        final int bottom = getMeasuredHeight() - getPaddingBottom();
         final int left = getPaddingLeft();
 
         //Here we are computing the drawing area which corresponds to the size of the palette view excluding its padding

@@ -28,4 +28,14 @@
 
     <string name="activity_palette_maker_default_name_for_palette">Palette %d</string>
 
+    <string name="contact_uri" translatable="false">mailto:%1$s?subject=%2$s</string>
+    <string name="contact_email" translatable="false">k00252533@student.lit.ie</string>
+    <string name="contact_default_subject">[Blind Eye] Suggestion</string>
+
+    <string name="activity_main_error_msg">Not enough colours. Must have at least 2 to create a Palette!</string>
+
+    <string name="activity_main_pager_title_colour">Colour</string>
+    <string name="activity_main_pager_title_palette">Palette</string>
+    <string name="activity_main_pager_title_unknown">Unknown</string>
+
 </resources>

@@ -3,12 +3,12 @@ package views;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.mad1.blindeye.PaletteDetailActivity;
 import com.mad1.blindeye.R;
@@ -74,7 +74,6 @@ public class PaletteListPage extends FrameLayout implements PaletteListWrapper.P
             public void onChanged() {
                 super.onChanged();
                 //ternary operator if statement
-                //TODO: Add this comment to every instance of a ternary IF, something briefly learned/used during placement
                 emptyView.setVisibility(adapter.getItemCount() == 0 ? VISIBLE : GONE);
             }
         });
@@ -105,16 +104,13 @@ public class PaletteListPage extends FrameLayout implements PaletteListWrapper.P
 
     @Override
     public void onPaletteClicked(@NonNull Palette palette, @NonNull View palettePreview) {
-//        TODO: PaletteDetailActivity needs to be populated to populate this particular method
+        PaletteDetailActivity.startingColourPalette(getContext(), palette, palettePreview);
     }
 
     private void initializeInternalListener() {
-        internalOnClickListener = new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (listener != null) {
-                    listener.onPaletteCreationRequestValues();
-                }
+        internalOnClickListener = v -> {
+            if (listener != null) {
+                listener.onPaletteCreationRequestValues();
             }
         };
     }

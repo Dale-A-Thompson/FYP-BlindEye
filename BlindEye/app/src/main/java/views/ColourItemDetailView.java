@@ -1,7 +1,9 @@
 package views;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import com.mad1.blindeye.R;
 import data.ColourItem;
 
 public class ColourItemDetailView extends LinearLayout {
+
     private ColourQuantityBar mQuantityBarRed;
     private ColourQuantityBar mQuantityBarGreen;
     private ColourQuantityBar mQuantityBarBlue;
@@ -31,6 +34,7 @@ public class ColourItemDetailView extends LinearLayout {
         init(context);
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public ColourItemDetailView(Context context, AttributeSet attributeSet, int defStyle, int defStyleRes) {
         super(context, attributeSet, defStyle, defStyleRes);
         init(context);
@@ -38,6 +42,8 @@ public class ColourItemDetailView extends LinearLayout {
 
     public void setColourItem(ColourItem colourItem) {
         final int colour = colourItem.getColour();
+
+        //TODO: Add hex strings for possibly name edit
 
         mQuantityBarRed.setValue(Color.red(colour) / 255f);
         mQuantityBarGreen.setValue(Color.green(colour) / 255f);
@@ -50,8 +56,8 @@ public class ColourItemDetailView extends LinearLayout {
 
         final View view = LayoutInflater.from(context).inflate(R.layout.view_colour_item_detail, this);
 
-        mQuantityBarRed = view.findViewById(R.id.quantity_bar_red);
-        mQuantityBarGreen = view.findViewById(R.id.quantity_bar_green);
-        mQuantityBarBlue = view.findViewById(R.id.quantity_bar_blue);
+        mQuantityBarRed = (ColourQuantityBar) view.findViewById(R.id.quantity_bar_red);
+        mQuantityBarGreen = (ColourQuantityBar) view.findViewById(R.id.quantity_bar_green);
+        mQuantityBarBlue = (ColourQuantityBar) view.findViewById(R.id.quantity_bar_blue);
     }
 }

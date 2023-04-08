@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--    Camera perms-->
     <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature
@@ -20,72 +21,75 @@
         tools:targetApi="31">
         <activity
             android:name=".PaletteMakerActivity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="fullSensor">
             <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
-        <activity
-            android:name=".PaletteMakerMainActivityFlavour"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".PaletteMakerMainActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+        <!--        <activity-->
+        <!--            android:name=".PaletteMakerMainActivityFlavour"-->
+        <!--            android:exported="false">-->
+        <!--            <meta-data-->
+        <!--                android:name="android.app.lib_name"-->
+        <!--                android:value="" />-->
+        <!--        </activity>-->
+        <!--        <activity-->
+        <!--            android:name=".PaletteMakerMainActivity"-->
+        <!--            android:exported="false">-->
+        <!--            <meta-data-->
+        <!--                android:name="android.app.lib_name"-->
+        <!--                android:value="" />-->
+        <!--        </activity>-->
         <activity
             android:name=".ColourTapActivity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="fullSensor">
             <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+
+            <intent-filter>
+                <action android:name="org.openintents.action.PICK_COLOR" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
-        <activity
-            android:name=".ColourTapMainActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+        <!--        <activity-->
+        <!--            android:name=".ColourTapMainActivity"-->
+        <!--            android:exported="false">-->
+        <!--            <meta-data-->
+        <!--                android:name="android.app.lib_name"-->
+        <!--                android:value="" />-->
+        <!--        </activity>-->
         <activity
             android:name=".PaletteDetailActivity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="fullSensor">
             <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".ColourDetailActivity"
             android:exported="false"
-            android:screenOrientation="fullSensor">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="fullSensor"
-            android:theme="@style/Theme.BlindEye">
+            android:theme="@style/Theme.BlindEye.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
         </activity>
 
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">

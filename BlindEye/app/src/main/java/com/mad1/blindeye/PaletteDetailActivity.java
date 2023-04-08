@@ -1,9 +1,5 @@
 package com.mad1.blindeye;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.StringRes;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -17,13 +13,17 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.content.FileProvider;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -165,10 +165,10 @@ public class PaletteDetailActivity extends AppCompatActivity implements DeletePa
                     final float sRatioY = (float) (stoppingBound.height() - 2 * insetShadow) / (float) mScaledPrev.getHeight();
                     mScaledPrev.setScaleX(sRatioX);
                     mScaledPrev.setScaleY(sRatioY);
-                    mScaledPrev.setVisibility(View.VISIBLE);
+                    mScaledPrev.setVisibility(View.INVISIBLE);
 
                     final AnimatorSet animatorSet = new AnimatorSet();
-                    animatorSet.play(ObjectAnimator.ofFloat(mTranslatedPrev, View.TRANSLATION_X, delY, 0))
+                    animatorSet.play(ObjectAnimator.ofFloat(mTranslatedPrev, View.TRANSLATION_X, delX, 0))
                             .with(ObjectAnimator.ofFloat(mTranslatedPrev, View.TRANSLATION_Y, delY, 0));
                     animatorSet.addListener(new Animator.AnimatorListener() {
                         @Override
@@ -260,7 +260,7 @@ public class PaletteDetailActivity extends AppCompatActivity implements DeletePa
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         //handling action bar item clicks. this will automatically handle clicks on the home button
         int id = item.getItemId();
 
@@ -277,7 +277,7 @@ public class PaletteDetailActivity extends AppCompatActivity implements DeletePa
     }
 
     @Override
-    public void onDeletionConfirmedP(@android.support.annotation.NonNull @NonNull Palette palette) {
+    public void onDeletionConfirmedP(@NonNull Palette palette) {
         //delete palette
         //do not finish activity here, handled by mOnPaletteChangeListener
         Palettes.deletePalette(this, palette);

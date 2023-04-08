@@ -41,6 +41,11 @@ public class ColourQuantityBar extends View {
         initView(context);
     }
 
+    public ColourQuantityBar(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet);
+        initView(context);
+    }
+
     public ColourQuantityBar(Context context, AttributeSet attributeSet, int styleAttr) {
         super(context, attributeSet, styleAttr);
         initView(context);
@@ -117,6 +122,12 @@ public class ColourQuantityBar extends View {
         mBarPaint.setColor(mBarColour);
     }
 
+    //set colour of thumb
+    public void setThumbColour(int thumbColour) {
+        mThumbColour = thumbColour;
+        mThumbPaint.setColor(mThumbColour);
+    }
+
     //Set value of ColourQuantityBar, method parameter is a value between 0f-1f
     public void setValue(float value) {
         mValue = value;
@@ -130,7 +141,7 @@ public class ColourQuantityBar extends View {
 
     private void drawBar(Canvas canvas) {
         canvas.drawLine(mBounds.left, mBounds.centerY(), mBounds.right, mBounds.centerY(), mBarPaint);
-        canvas.drawLine(0, mBounds.centerY(), mBounds.width() * mValue, mBounds.centerY(), mBarPaint);
+        canvas.drawLine(0, mBounds.centerY(), mBounds.width() * mValue, mBounds.centerY(), mBarOverPaint);
     }
 
     private void updateThumbPos() {

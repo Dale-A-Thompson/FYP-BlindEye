@@ -340,7 +340,8 @@ public class ColourTapMainActivity extends AppCompatActivity implements CameraPr
     protected void previewColour(int colourSelected) {
         settingCompleteSave(false);
         mColourSelectedPreview.getBackground().setColorFilter(colourSelected, PorterDuff.Mode.SRC_ATOP);
-        mColourSelectedPreviewText.setText(ColourItem.createHexString(colourSelected));
+        mColourSelectedPreviewText.setText(ColourItem.createHexString(colourSelected).toUpperCase());
+        Log.d("displaycolour", "previewColour: " + mColourSelectedPreviewText.getText());
     }
 
     //seeting transY of mCompletedSaveMsg to -mCompletedSaveMsg.getMeasuredHeight() so it's correctly placed before anim
