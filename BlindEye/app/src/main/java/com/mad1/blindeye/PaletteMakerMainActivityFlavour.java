@@ -7,6 +7,6 @@ final class PaletteMakerMainActivityFlavour {
     //last method called in PaletteMakerMainActivity onCreate
     static void onCreate(PaletteMakerMainActivity paletteMakerMainActivity) {
         //noinspection conditions
-        paletteMakerMainActivity.getSupportActionBar().setTitle(null);
+//        paletteMakerMainActivity.getSupportActionBar().setTitle(null);
     }
 }

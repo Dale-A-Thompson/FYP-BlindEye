@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/colour_row_item_size"
     android:background="?selectableItemBackground">
 
     <views.PaletteSquare
         android:id="@+id/palette_row_thumbnail"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
+        android:layout_width="@dimen/palette_thumbnail_size"
+        android:layout_height="@dimen/palette_thumbnail_size"
+        android:layout_gravity="start|center_vertical"
+        android:layout_margin="@dimen/default_halved"
         android:background="@drawable/square_shadow" />
+
+    <TextView
+        android:id="@+id/palette_row_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="82dp"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:minLines="1"
+        android:padding="16dp"
+        android:singleLine="true"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/abc_primary_text_material_light"
+        tools:text="My Palette" />
 
 </FrameLayout>

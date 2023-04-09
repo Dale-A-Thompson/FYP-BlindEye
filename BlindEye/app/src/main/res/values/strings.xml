@@ -38,4 +38,11 @@
     <string name="activity_main_pager_title_palette">Palette</string>
     <string name="activity_main_pager_title_unknown">Unknown</string>
 
+    <string name="colour_clip_util_success_msg">Copied to Clipboard</string>
+    <string name="colour_clip_util_hex">HEX Value</string>
+    <string name="colour_clip_util_rgb">RGB Value</string>
+    <string name="colour_clip_util_hsv">HSV Value</string>
+
+    <string name="palette_list_view_empty">You do not have any Palettes :(\n\nCreate one with the button on the bottom right!</string>
+
 </resources>

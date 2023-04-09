@@ -39,11 +39,11 @@ public class ColourTapActivity extends ColourTapMainActivity {
 
         if (b) {
             mSelectedColour.setVisibility(View.INVISIBLE);
-//            mCompletedSaveMsg.setVisibility(View.VISIBLE);
-//            mCompletedSaveMsg.animate().translationY(0).setDuration(SAVED_COLOUR_DURATION)
-//                    .setInterpolator(mCompletedSaveMsgInter).start();
-//            mCompletedSaveMsg.removeCallbacks(mCompletedSaveMsgHide);
-//            mCompletedSaveMsg.postDelayed(mCompletedSaveMsgHide, HIDDEN_MESSAGE_DELAY);
+            mCompletedSaveMsg.setVisibility(View.VISIBLE);
+            mCompletedSaveMsg.animate().translationY(0).setDuration(SAVED_COLOUR_DURATION)
+                    .setInterpolator(mCompletedSaveMsgInter).start();
+            mCompletedSaveMsg.removeCallbacks(mCompletedSaveMsgHide);
+            mCompletedSaveMsg.postDelayed(mCompletedSaveMsgHide, HIDDEN_MESSAGE_DELAY);
             finish();
         }
     }
@@ -51,11 +51,6 @@ public class ColourTapActivity extends ColourTapMainActivity {
     @Override
     protected void selectedColourAnim(int colourSelected) {
         super.selectedColourAnim(colourSelected);
-        mButtonToSave.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mButtonToSave.startAnimation(shake);
-            }
-        }, 500);
+        mButtonToSave.postDelayed(() -> mButtonToSave.startAnimation(shake), 500);
     }
 }

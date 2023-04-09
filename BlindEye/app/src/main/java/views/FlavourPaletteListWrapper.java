@@ -3,6 +3,7 @@ package views;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -20,8 +21,8 @@ public class FlavourPaletteListWrapper extends PaletteListWrapper {
     //Creating a FlavourPaletteListWrapper
     public static FlavourPaletteListWrapper create(RecyclerView recyclerView, PaletteListWrapperListener paletteListWrapperListener) {
         final PaletteAdapter paletteAdapter = new PaletteAdapter(paletteListWrapperListener);
-        int spanCount = recyclerView.getContext().getResources().getInteger(R.integer.horizontal_list_span);
-        final LinearLayoutManager linearLayoutManager = new GridLayoutManager(recyclerView.getContext(), spanCount);
+//        int spanCount = recyclerView.getContext().getResources().getInteger(R.integer.horizontal_list_span);
+        final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(recyclerView.getContext());
         return new FlavourPaletteListWrapper(recyclerView, paletteListWrapperListener, paletteAdapter, linearLayoutManager);
     }
 
@@ -55,6 +56,7 @@ public class FlavourPaletteListWrapper extends PaletteListWrapper {
         private final View mUnderLyingView;
         private final PaletteListWrapperListener mListener;
         private final PaletteView mPaletteThumbnail;
+        private final TextView mPaletteName;
         private Palette mPalette;
 
         public PaletteHolder(View view, PaletteListWrapperListener listener) {
@@ -62,6 +64,7 @@ public class FlavourPaletteListWrapper extends PaletteListWrapper {
             mUnderLyingView = view;
             mListener = listener;
             mPaletteThumbnail = (PaletteView) view.findViewById(R.id.palette_row_thumbnail);
+            mPaletteName = (TextView) view.findViewById(R.id.palette_row_name_text);
 
             view.setOnClickListener(this);
         }
@@ -69,6 +72,7 @@ public class FlavourPaletteListWrapper extends PaletteListWrapper {
         public void bind(Palette palette) {
             mPalette = palette;
             mPaletteThumbnail.setPalette(palette);
+            mPaletteName.setText(palette.getName());
         }
 
         @Override

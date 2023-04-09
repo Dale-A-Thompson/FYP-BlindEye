@@ -49,7 +49,7 @@ public class EditTextDialogFragment extends DialogFragment {
     //new instance of EditTextDialogFragment that'll ask user to name the palette
     public static EditTextDialogFragment newFragmentInstance(int reqCode, @StringRes int titleResID, @StringRes int posButtonResID,
                                                              @StringRes int negButtonResID, String textEditHint, String textEditInitial) {
-        return newFragmentInstance(reqCode, titleResID, posButtonResID, negButtonResID, textEditHint, textEditInitial);
+        return newFragmentInstance(reqCode, titleResID, posButtonResID, negButtonResID, textEditHint, textEditInitial, false);
     }
 
     public static EditTextDialogFragment newFragmentInstance(int reqCode, @StringRes int titleResID, @StringRes int posButtonResID,

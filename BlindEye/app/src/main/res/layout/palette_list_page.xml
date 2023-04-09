@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/palette_list_page_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:listitem="@layout/palette_row" />
 
-    <ImageView
+    <!--    <ImageView-->
+    <!--        android:id="@+id/empty_palette_list_page_view"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:alpha="0.3"-->
+    <!--        android:scaleType="centerInside"-->
+    <!--        android:src="@drawable/sad_face" />-->
+
+    <TextView
         android:id="@+id/empty_palette_list_page_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:alpha="0.3"
-        android:scaleType="centerInside"
-        android:src="@drawable/sad_face" />
+        android:gravity="center"
+        android:padding="32dp"
+        android:text="@string/palette_list_view_empty"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/abc_secondary_text_material_light"
+        android:textStyle="italic" />
 
 </merge>

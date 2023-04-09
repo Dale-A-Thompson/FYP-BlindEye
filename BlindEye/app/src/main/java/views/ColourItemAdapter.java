@@ -1,9 +1,11 @@
 package views;
 
 import android.graphics.PorterDuff;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import data.ColourItem;
+import utils.BackgroundUtils;
 
 //A RecyclerView Adapter that Adapts the ColourItems
 public class ColourItemAdapter extends RecyclerView.Adapter<ColourItemAdapter.ColourItemHolder> {
@@ -59,15 +62,21 @@ public class ColourItemAdapter extends RecyclerView.Adapter<ColourItemAdapter.Co
     interface ColourItemAdapterListener {
         //called when a ColourItem is clicked
         void onColourItemClicked(@NonNull ColourItem colourItem, @NonNull View colourPreview);
+
+        //called when a ColourItem is clicked on and held
+        void onColourItemClickedLong(@NonNull ColourItem colourItem);
     }
 
     //A ViewHolder associated with the layout colour_item_row
-    public static class ColourItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class ColourItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         //View to show a preview of the ColourItem
         private final View mColourPreview;
 
         //The underlying view
         private final View mUnderlyingView;
+
+        //text to display code(s)? for colour
+        private final TextView mColourText;
 
         //a ColourItemAdapterListener for callback(s)
         private final ColourItemAdapterListener mListener;
@@ -80,12 +89,20 @@ public class ColourItemAdapter extends RecyclerView.Adapter<ColourItemAdapter.Co
             mListener = listener;
             mUnderlyingView = itemView;
             mColourPreview = itemView.findViewById(R.id.colour_item_row_preview);
+            mColourText = itemView.findViewById(R.id.colour_item_row_name_text);
+            BackgroundUtils.setBackground(mColourPreview, new ColourBlobDrawable(itemView.getContext()));
             itemView.setOnClickListener(this);
+            itemView.setOnLongClickListener(this);
         }
 
         public void bind(ColourItem colourItem) {
             mColourItem = colourItem;
             mColourPreview.getBackground().setColorFilter(colourItem.getColour(), PorterDuff.Mode.MULTIPLY);
+            if (!TextUtils.isEmpty(colourItem.getName())) {
+                mColourText.setText(colourItem.getName());
+            } else {
+                mColourText.setText(colourItem.getHexString());
+            }
         }
 
         @Override
@@ -97,6 +114,16 @@ public class ColourItemAdapter extends RecyclerView.Adapter<ColourItemAdapter.Co
             if (mColourItem != null) {
                 mListener.onColourItemClicked(mColourItem, mColourPreview);
             }
+        }
+
+        @Override
+        public boolean onLongClick(View v) {
+            if (v != mUnderlyingView || mColourItem == null) {
+                return false;
+            }
+
+            mListener.onColourItemClickedLong(mColourItem);
+            return true;
         }
     }
 }
