@@ -23,7 +23,7 @@ public class ColourItemAdapter extends RecyclerView.Adapter<ColourItemAdapter.Co
     private final List<ColourItem> mColourItems;
     private final ColourItemAdapterListener mListener;
 
-    ColourItemAdapter(ColourItemAdapterListener listener) {
+    public ColourItemAdapter(ColourItemAdapterListener listener) {
         this.mListener = listener;
         this.mColourItems = new ArrayList<>();
     }
@@ -46,20 +46,22 @@ public class ColourItemAdapter extends RecyclerView.Adapter<ColourItemAdapter.Co
         return mColourItems.size();
     }
 
-    void setColourItems(List<ColourItem> items) {
+    //setting colour items
+    public void setColourItems(List<ColourItem> items) {
         mColourItems.clear();
         mColourItems.addAll(items);
         notifyDataSetChanged();
     }
 
-    void addColourItems(List<ColourItem> colourAdded) {
+    //adding colour items
+    public void addColourItems(List<ColourItem> colourAdded) {
         for (int i = colourAdded.size() - 1; i >= 0; i--) {
             mColourItems.add(0, colourAdded.get(i));
         }
     }
 
     //Interface for Listening to the ColourItemAdapter callbacks
-    interface ColourItemAdapterListener {
+    public interface ColourItemAdapterListener {
         //called when a ColourItem is clicked
         void onColourItemClicked(@NonNull ColourItem colourItem, @NonNull View colourPreview);
 

@@ -30,7 +30,7 @@ import data.ColourItems;
 import utils.CameraUtil;
 import views.CameraPreviewPicker;
 
-//an actvity for choosing colours thru camera
+//an activity for choosing colours thru camera
 public class ColourTapMainActivity extends AppCompatActivity implements CameraPreviewPicker.OnColourSelectedListener, View.OnClickListener {
 
     //tag to be used in logcat

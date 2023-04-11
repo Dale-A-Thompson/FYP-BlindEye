@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
-            android:src="@drawable/ic_fab_action"
+            android:src="@drawable/ic_camera_action"
             app:fab_colorNormal="@color/Haiti"
             app:fab_colorPressed="@color/Haiti"
             app:fab_colorRipple="?attr/colorControlHighlight" />

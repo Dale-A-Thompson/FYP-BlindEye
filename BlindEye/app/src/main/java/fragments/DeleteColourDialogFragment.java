@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
 import data.ColourItem;
+import fragments.flavor.DeleteColourDialogFragmentFlavour;
 
 //DialogFragment that'll be used to ask user to confirm deletion of a ColourItem
 public class DeleteColourDialogFragment extends DialogFragment {

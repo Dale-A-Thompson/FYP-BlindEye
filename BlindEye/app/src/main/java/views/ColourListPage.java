@@ -23,8 +23,10 @@ import java.util.List;
 
 import data.ColourItem;
 import data.ColourItems;
+import views.flavor.FlavourColourItemListWrapper;
 import wrappers.ColourItemListWrapper;
 
+//FrameLayout that is used in the ViewPager of the MainActivity that will display the list of the colouritems created/saved by the user
 public class ColourListPage extends FrameLayout implements ColourItemListWrapper.ColourItemListWrapperListener {
 
     //A ColourItemListWrapper
@@ -133,7 +135,7 @@ public class ColourListPage extends FrameLayout implements ColourItemListWrapper
                         //colour has been added
                         colourAdded.clear();
                         for (int i = 0; i < colourItems.size() - currentColours.size(); i++) {
-
+                            colourAdded.add(colourItems.get(i));
                         }
                     }
                 }
@@ -176,7 +178,7 @@ public class ColourListPage extends FrameLayout implements ColourItemListWrapper
             @Override
             public void onActivityPaused(@NonNull Activity activity) {
                 if (getContext() == activity) {
-                    onHoldingActivityResumed();
+                    onHoldingActivityPaused();
                 }
             }
 

@@ -5,6 +5,7 @@ import data.Palettes;
 import fragments.EditTextDialogFragment;
 import views.PaletteCreatorView;
 
+//essentially a flavour(flavor) implementation
 public class PaletteMakerActivity extends PaletteMakerMainActivity implements EditTextDialogFragment.Callback {
 
     @Override

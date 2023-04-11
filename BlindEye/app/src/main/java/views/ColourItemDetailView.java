@@ -56,6 +56,7 @@ public class ColourItemDetailView extends LinearLayout implements View.OnClickLi
         super.onDetachedFromWindow();
     }
 
+    //setting the colour item
     public void setColourItem(ColourItem colourItem) {
         final int colour = colourItem.getColour();
 
@@ -108,6 +109,7 @@ public class ColourItemDetailView extends LinearLayout implements View.OnClickLi
         }
     }
 
+    //allowing the user to hold a value to copy it
     private void colourClip(int resID, CharSequence colourStr) {
         final Context context = getContext();
         ClipDataUtil.clipText(context, context.getString(resID), colourStr);

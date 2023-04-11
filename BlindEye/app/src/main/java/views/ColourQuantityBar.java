@@ -14,7 +14,9 @@ import androidx.core.content.ContextCompat;
 
 import com.mad1.blindeye.R;
 
+//class that will draw the colour bars/sliders that will be displayed in the colour details
 public class ColourQuantityBar extends View {
+
     protected static final float DEFAULT_BAR_WIDTH = 6;
     protected static final float DEFAULT_BAR_OVER_WIDTH = 6;
     protected static final float DEFAULT_THUMB_RADIUS = 7;
@@ -135,20 +137,24 @@ public class ColourQuantityBar extends View {
         invalidate();
     }
 
+    //drawing the thumb circle
     private void drawThumb(Canvas canvas) {
         canvas.drawCircle(mThumbCenter.x, mThumbCenter.y, mThumbRadius, mThumbPaint);
     }
 
+    //drawing the bar itself
     private void drawBar(Canvas canvas) {
         canvas.drawLine(mBounds.left, mBounds.centerY(), mBounds.right, mBounds.centerY(), mBarPaint);
         canvas.drawLine(0, mBounds.centerY(), mBounds.width() * mValue, mBounds.centerY(), mBarOverPaint);
     }
 
+    //updating the thumb position
     private void updateThumbPos() {
         mThumbCenter.x = mBounds.left + mBounds.width() * mValue;
         mThumbCenter.y = mBounds.centerY();
     }
 
+    //converting the Dip (device independent pixels) to pixels
     private static int dipToPixel(DisplayMetrics displayMetrics, float dip) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dip, displayMetrics);
     }

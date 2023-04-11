@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
 import data.Palette;
+import fragments.flavor.DeletePaletteDialogFragmentFlavour;
 
 //DialogFragment that'll be used to ask user to confirm deletion of a Palette
 public class DeletePaletteDialogFragment extends DialogFragment {

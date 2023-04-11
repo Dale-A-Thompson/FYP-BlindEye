@@ -31,18 +31,20 @@
         android:id="@+id/activity_selected_colour_selected_save_msg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
+        android:background="@color/Haiti"
         android:gravity="center"
         android:padding="8dp"
         android:text="@string/colour_saved_msg"
         android:visibility="invisible"
+        android:textColor="@color/white"
         tools:visibility="visible" />
 
     <RelativeLayout
         android:id="@+id/activity_selected_colour_bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/colour_picker_bar_height"
-        android:layout_gravity="bottom">
+        android:layout_gravity="bottom"
+        android:background="@color/Haiti">
 
         <View
             android:id="@+id/activity_selected_colour_prev"
@@ -60,7 +62,7 @@
             android:gravity="center_vertical"
             android:padding="16dp"
             android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="@color/abc_primary_text_material_light"
+            android:textColor="@color/abc_primary_text_material_dark"
             tools:text="#FF4455" />
 
         <ImageButton

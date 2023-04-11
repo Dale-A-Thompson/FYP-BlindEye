@@ -1,4 +1,4 @@
-package fragments;
+package fragments.flavor;
 
 //import android.app.AlertDialog;
 
@@ -13,12 +13,13 @@ import android.view.View;
 import com.mad1.blindeye.R;
 
 import data.ColourItem;
+import fragments.DeleteColourDialogFragment;
 
 //static class for flavour behaviour
-final class DeleteColourDialogFragmentFlavour {
+public final class DeleteColourDialogFragmentFlavour {
     //AlertDialog that asks the user to confirm deletion of a ColourItem
 
-    static Dialog dialogCreation(Context context, final DeleteColourDialogFragment.Callback callback, final ColourItem colourItem) {
+    public static Dialog dialogCreation(Context context, final DeleteColourDialogFragment.Callback callback, final ColourItem colourItem) {
         final View view = LayoutInflater.from(context).inflate(R.layout.delete_colour_dialog_fragment, null);
         final int colour = colourItem.getColour();
 

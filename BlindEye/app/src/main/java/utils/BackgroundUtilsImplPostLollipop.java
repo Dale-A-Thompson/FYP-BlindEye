@@ -8,8 +8,10 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.RippleDrawable;
 import android.os.Build;
 
+//utils class that is used to encapsulate behaviour linked to the background(s) for post-Lollipop devices
 final class BackgroundUtilsImplPostLollipop {
 
+    //non-instantiable class
     public BackgroundUtilsImplPostLollipop() {
     }
 

@@ -16,7 +16,7 @@ public class ViewUtil {
     }
 
     //Converting value(s) from dp (device independent pixels) to pixel
-    public static int dpToPixels(DisplayMetrics displayMetrics, float dp) {
+    public static int dipToPixels(DisplayMetrics displayMetrics, float dp) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, displayMetrics);
     }
 

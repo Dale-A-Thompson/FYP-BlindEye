@@ -1,11 +1,13 @@
-package com.mad1.blindeye;
+package com.mad1.blindeye.flavor;
+
+import com.mad1.blindeye.PaletteMakerMainActivity;
 
 //static methods for behaviour of flavour PaletteMakerMainActivity
-final class PaletteMakerMainActivityFlavour {
+public final class PaletteMakerMainActivityFlavour {
 
     //called when PaletteMakerMainActivity onCreate is called
     //last method called in PaletteMakerMainActivity onCreate
-    static void onCreate(PaletteMakerMainActivity paletteMakerMainActivity) {
+    public static void onCreate(PaletteMakerMainActivity paletteMakerMainActivity) {
         //noinspection conditions
 //        paletteMakerMainActivity.getSupportActionBar().setTitle(null);
     }

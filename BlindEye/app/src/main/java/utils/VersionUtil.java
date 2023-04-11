@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
+//methods for dealing with the version of the application
 public class VersionUtil {
     //default ver name
     public static final String DEFAULT_VERSION = "unknown";

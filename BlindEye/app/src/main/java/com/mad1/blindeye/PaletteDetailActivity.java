@@ -25,6 +25,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.mad1.blindeye.flavor.PaletteDetailActivityFlavour;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -36,10 +38,11 @@ import data.Palette;
 import data.Palettes;
 import fragments.DeletePaletteDialogFragment;
 import fragments.EditTextDialogFragment;
-import views.FlavourColourItemListWrapper;
+import views.flavor.FlavourColourItemListWrapper;
 import views.PaletteView;
 import wrappers.ColourItemListWrapper;
 
+//activity that displays the palettes with its respective colours(colouritems)
 public class PaletteDetailActivity extends AppCompatActivity implements DeletePaletteDialogFragment.Callback, EditTextDialogFragment.Callback,
         ColourItemListWrapper.ColourItemListWrapperListener {
 

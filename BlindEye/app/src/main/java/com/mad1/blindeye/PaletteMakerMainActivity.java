@@ -12,11 +12,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.mad1.blindeye.flavor.PaletteMakerMainActivityFlavour;
 import com.melnykov.fab.FloatingActionButton;
 
 import data.ColourItem;
 import data.ColourItems;
-import views.FlavourColourItemListWrapper;
+import views.flavor.FlavourColourItemListWrapper;
 import views.PaletteCreatorView;
 import wrappers.ColourItemListWrapper;
 

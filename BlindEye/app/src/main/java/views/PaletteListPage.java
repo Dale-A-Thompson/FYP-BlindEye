@@ -17,8 +17,10 @@ import java.util.List;
 
 import data.Palette;
 import data.Palettes;
+import views.flavor.FlavourPaletteListWrapper;
 import wrappers.PaletteListWrapper;
 
+//a FrameLayout that's used in the ViewPager of the MainActivity to display the lost of Palettes that would be created by the user
 public class PaletteListPage extends FrameLayout implements PaletteListWrapper.PaletteListWrapperListener {
     //OnPaletteChangeListener that'll get notified when user's palettes change
     private Palettes.OnPaletteChangeListener mOnPaletteChangeListener;

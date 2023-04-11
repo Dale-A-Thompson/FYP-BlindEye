@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+//utils class that is used to encapsulate behaviour linked to the background(s)
 public final class BackgroundUtils {
 
     //non-instantiable class

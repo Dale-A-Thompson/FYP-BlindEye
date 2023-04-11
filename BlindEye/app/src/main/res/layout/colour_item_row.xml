@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/colour_row_item_size"
     android:background="?selectableItemBackground">
+    <!--    phone constantly sticks in black on dark if using ?selectableItemBackground-->
+    <!--    TODO: change to @color/main_activity_bg_colour-->
 
     <views.ColourBlobView
         android:id="@+id/colour_item_row_preview"

@@ -29,7 +29,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
-import com.mad1.blindeye.R;
+import com.mad1.blindeye.flavor.ColourDetailActivityFlavour;
 
 import data.ColourItem;
 import data.ColourItems;
@@ -39,6 +39,7 @@ import fragments.DeleteColourDialogFragment;
 import fragments.EditTextDialogFragment;
 import views.ColourItemDetailView;
 
+//activity that shows the details of the colouritems
 public class ColourDetailActivity extends AppCompatActivity implements DeleteColourDialogFragment.Callback,
         EditTextDialogFragment.Callback {
 

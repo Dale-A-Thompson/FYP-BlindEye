@@ -7,7 +7,7 @@ import android.view.animation.AnimationUtils;
 
 import androidx.appcompat.app.ActionBar;
 
-//ColourTapMainActivity flavour basically
+//ColourTapMainActivity flavour essentially
 public class ColourTapActivity extends ColourTapMainActivity {
 
     private Animation shake;

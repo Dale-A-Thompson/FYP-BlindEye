@@ -9,6 +9,7 @@ import android.view.TextureView;
 
 import androidx.annotation.NonNull;
 
+//TextureView that is used to render the camera preview
 public class CameraPreviewPicker extends TextureView implements TextureView.SurfaceTextureListener, Camera.PreviewCallback {
     //Logging tag
     private static final String TAG = CameraPreviewPicker.class.getCanonicalName();
@@ -88,6 +89,7 @@ public class CameraPreviewPicker extends TextureView implements TextureView.Surf
         }
     }
 
+    //converting the YUV values to RGB, this is gonna be a head wreck, UPDATE: it was a head wreck....
     private void yuv420Colour(byte[] data, int[] avgColour, int i, int x, int y, int width, int height) {
         //This is referenced mostly from https://stackoverflow.com/questions/9325861/converting-yuv-rgbimage-processing-yuv-during-onpreviewframe-in-android/10125048#10125048
         final int s = width * height;

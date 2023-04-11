@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat;
 
 import com.mad1.blindeye.R;
 
+//a Drawable class that is used to render the/a blob colour with a shadow, hopefully smooth
 class ColourBlobDrawable extends GradientDrawable {
 
     private final Paint paint;

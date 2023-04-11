@@ -6,9 +6,9 @@ import android.view.View;
 
 import utils.BackgroundUtils;
 
+//a View that's used to render the colour dot(s)
+//View to render the colour blob (or dot), I will be referring to it as a blob for future reference
 public class ColourBlobView extends View {
-
-    //View to render the colour blob (or dot), I will be referring to it as a blob for future reference
 
     //view to render blob
     public ColourBlobView(Context context, AttributeSet attributeSet, int styleAttribute) {
@@ -35,6 +35,7 @@ public class ColourBlobView extends View {
         setMeasuredDimension(mSpec, mSpec);
     }
 
+    //initializing the internal component(s?)
     private void initialize(Context context) {
         if (!isInEditMode()) {
             BackgroundUtils.setBackground(this, new ColourBlobDrawable(context));

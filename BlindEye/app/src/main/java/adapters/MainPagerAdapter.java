@@ -12,6 +12,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import com.astuetz.PagerSlidingTabStrip;
 import com.mad1.blindeye.R;
 
+//Adapter that is used to display the tab from the MainActivity
 public abstract class MainPagerAdapter extends PagerAdapter implements PagerSlidingTabStrip.CustomTabProvider {
 
     public View getCustomTabView(ViewGroup parent, int pos) {
@@ -25,8 +26,8 @@ public abstract class MainPagerAdapter extends PagerAdapter implements PagerSlid
                 imageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_roundwhite));
                 break;
             case 1:
-                Drawable drawable = ContextCompat.getDrawable(context, R.drawable.ic_white_column);
-                drawable.setAlpha(170);
+                Drawable drawable = ContextCompat.getDrawable(context, R.drawable.ic_updated_white_column);
+//                drawable.setAlpha(170);
                 imageView.setImageDrawable(drawable);
                 break;
             default:

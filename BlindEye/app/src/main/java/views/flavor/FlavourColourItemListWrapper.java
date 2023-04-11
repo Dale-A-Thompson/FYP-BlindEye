@@ -1,4 +1,4 @@
-package views;
+package views.flavor;
 
 import android.app.Activity;
 import android.app.Application;
@@ -19,9 +19,10 @@ import java.util.List;
 
 import data.ColourItem;
 import utils.ClipDataUtil;
+import views.ColourItemAdapter;
 import wrappers.ColourItemListWrapper;
 
-//flavour
+//flavour for ColourItemListWrapper
 public class FlavourColourItemListWrapper extends ColourItemListWrapper implements ColourItemAdapter.ColourItemAdapterListener {
 
     private final ColourItemAdapter mAdapter;
@@ -128,6 +129,7 @@ public class FlavourColourItemListWrapper extends ColourItemListWrapper implemen
         mAdapter.addColourItems(newColourAdded);
     }
 
+    //hiding toast
     protected void hidingToast() {
         if (mToast != null) {
             mToast.cancel();
@@ -135,6 +137,7 @@ public class FlavourColourItemListWrapper extends ColourItemListWrapper implemen
         }
     }
 
+    //showing toast
     protected void showingToast(int resID) {
         hidingToast();
         mToast = Toast.makeText(mContext, resID, Toast.LENGTH_SHORT);
