@@ -18,7 +18,7 @@ import java.util.List;
 import data.ColourItem;
 import utils.BackgroundUtils;
 
-//A RecyclerView Adapter that Adapts the ColourItems
+//A RecyclerView Adapter that Adapts the ColourItems into the res/layout/colour_item_row.xml
 public class ColourItemAdapter extends RecyclerView.Adapter<ColourItemAdapter.ColourItemHolder> {
     private final List<ColourItem> mColourItems;
     private final ColourItemAdapterListener mListener;
@@ -69,7 +69,7 @@ public class ColourItemAdapter extends RecyclerView.Adapter<ColourItemAdapter.Co
         void onColourItemClickedLong(@NonNull ColourItem colourItem);
     }
 
-    //A ViewHolder associated with the layout colour_item_row
+    //A ViewHolder associated with the res/layout/colour_item_row.xml
     public static class ColourItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         //View to show a preview of the ColourItem
         private final View mColourPreview;
@@ -77,7 +77,7 @@ public class ColourItemAdapter extends RecyclerView.Adapter<ColourItemAdapter.Co
         //The underlying view
         private final View mUnderlyingView;
 
-        //text to display code(s)? for colour
+        //text to display code(s) for colour
         private final TextView mColourText;
 
         //a ColourItemAdapterListener for callback(s)

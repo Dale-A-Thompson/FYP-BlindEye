@@ -92,7 +92,7 @@ public class PaletteView extends View {
         }
     }
 
-    //Initializing Palette View, much be called once in each of the constructors above
+    //Initializing Palette View, must be called once in each of the constructors above
     private void init() {
         mRectF = new RectF();
         mRectFBounds = new RectF();

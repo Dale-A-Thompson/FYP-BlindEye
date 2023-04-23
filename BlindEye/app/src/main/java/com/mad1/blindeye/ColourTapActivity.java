@@ -36,7 +36,6 @@ public class ColourTapActivity extends ColourTapMainActivity {
     protected void settingCompleteSave(boolean b) {
         super.settingCompleteSave(b);
 
-
         if (b) {
             mSelectedColour.setVisibility(View.INVISIBLE);
             mCompletedSaveMsg.setVisibility(View.VISIBLE);
@@ -44,7 +43,7 @@ public class ColourTapActivity extends ColourTapMainActivity {
                     .setInterpolator(mCompletedSaveMsgInter).start();
             mCompletedSaveMsg.removeCallbacks(mCompletedSaveMsgHide);
             mCompletedSaveMsg.postDelayed(mCompletedSaveMsgHide, HIDDEN_MESSAGE_DELAY);
-            finish();
+//            finish();
         }
     }
 

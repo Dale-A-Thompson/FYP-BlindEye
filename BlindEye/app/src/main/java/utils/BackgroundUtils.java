@@ -29,7 +29,7 @@ public final class BackgroundUtils {
         }
     }
 
-    //set background scross android versions
+    //set background across android versions
     public static void setBackground(@NonNull View view, @Nullable Drawable drawable) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             view.setBackground(drawable);

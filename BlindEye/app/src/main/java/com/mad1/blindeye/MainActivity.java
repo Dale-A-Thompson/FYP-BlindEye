@@ -32,7 +32,7 @@ import fragments.AboutDialogFragment;
 import views.ColourListPage;
 import views.PaletteListPage;
 
-//activity that shows list of saved colours by the user
+//activity that shows list of saved colours by the user, application launches off this activity
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, ViewPager.OnPageChangeListener,
         ColourListPage.Listener, PaletteListPage.Listener {
 

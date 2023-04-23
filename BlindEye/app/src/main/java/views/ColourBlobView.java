@@ -21,6 +21,7 @@ public class ColourBlobView extends View {
         this(context, attributeSet, 0);
     }
 
+    //view to render blob
     //context to hold current context
     public ColourBlobView(Context context) {
         this(context, null);
@@ -35,7 +36,7 @@ public class ColourBlobView extends View {
         setMeasuredDimension(mSpec, mSpec);
     }
 
-    //initializing the internal component(s?)
+    //initializing the internal component
     private void initialize(Context context) {
         if (!isInEditMode()) {
             BackgroundUtils.setBackground(this, new ColourBlobDrawable(context));

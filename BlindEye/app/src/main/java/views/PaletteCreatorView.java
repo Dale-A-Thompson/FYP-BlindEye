@@ -19,6 +19,9 @@ import data.ColourItem;
 import data.Palette;
 
 //View for creating Palette(s).
+//colours can be added through the use of the colourToPalette method
+//the most recent added colour can be removed through the use of the removeRecentColour method
+//can call the create method to create the Palette with the colours that have been added
 public class PaletteCreatorView extends View {
     //Name of property that'll be used for width animation of items
     private static final String ITEM_WIDTH_NAME = "itemWidth";

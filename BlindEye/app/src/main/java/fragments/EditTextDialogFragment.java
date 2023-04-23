@@ -52,6 +52,7 @@ public class EditTextDialogFragment extends DialogFragment {
         return newFragmentInstance(reqCode, titleResID, posButtonResID, negButtonResID, textEditHint, textEditInitial, false);
     }
 
+    //new instance of EditTextDialogFragment that'll ask user to name the palette
     public static EditTextDialogFragment newFragmentInstance(int reqCode, @StringRes int titleResID, @StringRes int posButtonResID,
                                                              @StringRes int negButtonResID, String textEditHint, String textEditInitial, boolean emptyString) {
         final EditTextDialogFragment editTextDialogFragment = new EditTextDialogFragment();
@@ -66,7 +67,6 @@ public class EditTextDialogFragment extends DialogFragment {
         editTextDialogFragment.setArguments(bundle);
         return editTextDialogFragment;
     }
-
 
     //a callback that'll be notified for EditTextDialogFragment
     private Callback mCallback;
@@ -134,17 +134,19 @@ public class EditTextDialogFragment extends DialogFragment {
         final AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setView(view).setTitle(titleResID).setCancelable(true)
                 //don't want positive button to dismiss the alert dialog all the time
+                //the onClickListener is set in an OnShowListener below this
                 .setPositiveButton(posButtonResID, null)
                 .setNegativeButton(negButtonResID, (dialog, which) -> handleNegBtnClick());
 
         //setting positive button onClickListener
         final AlertDialog dialog = builder.create();
+        //onShowListener referenced on line 137
         dialog.setOnShowListener(dialogInterface -> {
             final Button posBtn = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
             posBtn.setOnClickListener(v -> handlePosBtnClick());
         });
 
-        //user presses the ime action done, it is considered a positive click
+        //user presses the IME action done, it is considered a positive click
         mEditText.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 handlePosBtnClick();
@@ -156,6 +158,7 @@ public class EditTextDialogFragment extends DialogFragment {
         return dialog;
     }
 
+    //handing the click of the green tick when user clicks it
     private void handlePosBtnClick() {
         final String text = mEditText.getText().toString();
         if (TextUtils.isEmpty(text) && !mEmptyString) {
@@ -169,10 +172,12 @@ public class EditTextDialogFragment extends DialogFragment {
         }
     }
 
+    //handing the click of the red x when user clicks it
     private void handleNegBtnClick() {
         mCallback.onEditNegativeButtonClicked(mReqCode);
     }
 
+    //checking if the required args are present in the Bundle above. Line 112 onwards a little.
     private void ensureArgsArePresent(Bundle args) {
         if (args == null) {
             throw new IllegalArgumentException("Args cannot be null");

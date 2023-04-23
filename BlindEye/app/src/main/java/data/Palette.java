@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import java.util.ArrayList;
 import java.util.List;
 
-//class that represents a palette consisting of colours from colouritem(s)
+//class that represents a palette consisting of colours from ColourItem(s)
 public class Palette implements Parcelable {
     //Palette ID
     private final long mId;

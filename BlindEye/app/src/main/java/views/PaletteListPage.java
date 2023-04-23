@@ -109,6 +109,7 @@ public class PaletteListPage extends FrameLayout implements PaletteListWrapper.P
         PaletteDetailActivity.startingColourPalette(getContext(), palette, palettePreview);
     }
 
+    //initializing the internal listener
     private void initializeInternalListener() {
         internalOnClickListener = v -> {
             if (listener != null) {

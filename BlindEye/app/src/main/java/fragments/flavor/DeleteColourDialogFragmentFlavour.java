@@ -17,8 +17,8 @@ import fragments.DeleteColourDialogFragment;
 
 //static class for flavour behaviour
 public final class DeleteColourDialogFragmentFlavour {
-    //AlertDialog that asks the user to confirm deletion of a ColourItem
 
+    //AlertDialog that asks the user to confirm deletion of a ColourItem
     public static Dialog dialogCreation(Context context, final DeleteColourDialogFragment.Callback callback, final ColourItem colourItem) {
         final View view = LayoutInflater.from(context).inflate(R.layout.delete_colour_dialog_fragment, null);
         final int colour = colourItem.getColour();

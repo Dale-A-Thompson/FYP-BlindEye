@@ -28,19 +28,19 @@ public abstract class PaletteMakerMainActivity extends AppCompatActivity impleme
     //floating action button (fab) animation duration
     private static final int ANIM_FAB_DUR = 300;
 
-    //palettecreatorview used for building the palette of the colours
+    //PaletteCreatorView used for building the palette of the colours
     protected PaletteCreatorView mPaletteCreatorView;
 
-    //objectanimator for animating the button that will remove the final colour from the builder for the palettes
+    //ObjectAnimator for animating the button that will remove the final colour from the builder for the palettes
     private ObjectAnimator mFinalColourRemoverBtnAnim;
 
     //fab to create the palette
     private FloatingActionButton mFloatingActionButton;
 
-    //linearinterpolator to animate the fab above ^
+    //LinearInterpolator to animate the fab above ^
     private LinearInterpolator mLinearInterpolator;
 
-    //decelerateinterpolator to animate the fab above ^^
+    //DecelerateInterpolator to animate the fab above ^^
     private DecelerateInterpolator mDecelerateInterpolator;
 
     //y translation that'll be used for hiding the fab above ^^

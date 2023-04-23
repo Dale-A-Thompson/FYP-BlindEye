@@ -10,6 +10,7 @@ import java.util.List;
 
 import data.Palette;
 
+//a wrapper of type view RecyclerView that displays the Palettes
 public abstract class PaletteListWrapper {
 
     protected final RecyclerView mRecyclerView;

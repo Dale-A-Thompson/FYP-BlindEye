@@ -26,7 +26,7 @@ import data.ColourItems;
 import views.flavor.FlavourColourItemListWrapper;
 import wrappers.ColourItemListWrapper;
 
-//FrameLayout that is used in the ViewPager of the MainActivity that will display the list of the colouritems created/saved by the user
+//FrameLayout that is used in the ViewPager of the MainActivity that will display the list of the ColourItems created/saved by the user
 public class ColourListPage extends FrameLayout implements ColourItemListWrapper.ColourItemListWrapperListener {
 
     //A ColourItemListWrapper
@@ -77,6 +77,7 @@ public class ColourListPage extends FrameLayout implements ColourItemListWrapper
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
+        //Register OnColourItemChangeListener for notifications for when user creates or deletes new colour
         ColourItems.registerListener(getContext(), mOnColourItemChangeListener);
         ((Application) getContext().getApplicationContext()).registerActivityLifecycleCallbacks(activityLifecycleCallbacks);
     }
@@ -84,6 +85,7 @@ public class ColourListPage extends FrameLayout implements ColourItemListWrapper
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
+        //Unregister OnColourItemChangeListener, notifications are no longer needed
         ColourItems.unregisterListener(getContext(), mOnColourItemChangeListener);
         ((Application) getContext().getApplicationContext()).registerActivityLifecycleCallbacks(activityLifecycleCallbacks);
     }
@@ -93,6 +95,8 @@ public class ColourListPage extends FrameLayout implements ColourItemListWrapper
         this.listener = listener;
     }
 
+    //Initializing the colour list page
+    //Has to be called in each constructor above once
     private void init(Context context) {
         initLifeCycleListener();
 
@@ -145,12 +149,9 @@ public class ColourListPage extends FrameLayout implements ColourItemListWrapper
 
     //Initialize listener that is used internally to avoid exposing onClick to user
     private void initInternalListener() {
-        internalOnClickListener = new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (listener != null) {
-                    listener.onEmphasisOnAddColourActionRequested();
-                }
+        internalOnClickListener = v -> {
+            if (listener != null) {
+                listener.onEmphasisOnAddColourActionRequested();
             }
         };
     }

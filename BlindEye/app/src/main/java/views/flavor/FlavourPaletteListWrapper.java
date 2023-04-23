@@ -30,7 +30,7 @@ public class FlavourPaletteListWrapper extends PaletteListWrapper {
         super(recyclerView, paletteListWrapperListener, adapter, layoutManager);
     }
 
-    //An Adapter of the PaletteHolder inner class
+    //An Adapter of the PaletteHolder inner class. It adapts the Palettes into res/layout/palette_row.xml
     private static class PaletteAdapter extends Adapter<PaletteHolder> {
         protected PaletteAdapter(PaletteListWrapperListener paletteListWrapperListener) {
             super(paletteListWrapperListener);

@@ -93,15 +93,28 @@ public class CameraPreviewPicker extends TextureView implements TextureView.Surf
     private void yuv420Colour(byte[] data, int[] avgColour, int i, int x, int y, int width, int height) {
         //This is referenced mostly from https://stackoverflow.com/questions/9325861/converting-yuv-rgbimage-processing-yuv-during-onpreviewframe-in-android/10125048#10125048
         final int s = width * height;
+
+        //get the Y value, which is stored in the first block of data
+        //the logical "AND 0xFF" is needed to deal with the signed issue
+        final int Y = data[y * width + x] & 0xFF;
+
+        //get the U and V values, stored after Y values, one per 2x2 block
+        //of pixels, interleaved. Prepare them as floats with correct range
+        //ready for calculation later
         final int x2 = x / 2;
         final int y2 = y / 2;
 
-        final int Y = data[y * width + x] & 0xFF;
+        //make this V for NV12/420SP
+        //nv12 (another variant of YUV420) is a biplanar format with a full sized Y plane followed by a single chroma plane with weaved U and V values
         final float U = (float) (data[s + 2 * x2 + 1 + y2 * width] & 0xFF) - 128.0f;
+        //make this U for NV12/420SP
         final float V = (float) (data[s + 2 * x2 + y2 * width] & 0xFF) - 128.0f;
 
         //YUV to RGB conversion
+        //correct Y to allow for the fact that it is [16..235] and not [0..255]
         float yF = 1.164f * ((float) Y) - 16.0f;
+        //doing the YUV to RGB conversion
+        //these values appear to work, but there are others out there
         int red = (int) (yF + 1.596f * V);
         int green = (int) (yF - 0.813f * V - 0.391f * U);
         int blue = (int) (yF + 2.018f * U);
@@ -110,6 +123,13 @@ public class CameraPreviewPicker extends TextureView implements TextureView.Surf
         red = red < 0 ? 0 : red > 255 ? 255 : red;
         green = green < 0 ? 0 : green > 255 ? 255 : green;
         blue = blue < 0 ? 0 : blue > 255 ? 255 : blue;
+
+//        if (red < 0) {
+//            red = 0;
+//        } else {
+//            if (red > 255) red = 255;
+//            else red = red;
+//        }
 
         avgColour[0] += (red - avgColour[0]) / i;
         avgColour[1] += (green - avgColour[1]) / i;

@@ -6,7 +6,7 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
-//class that represents a colour (colouritem)
+//class that represents a colour (ColourItem)
 public class ColourItem implements Parcelable {
     //Colour ID
     protected final long mId;

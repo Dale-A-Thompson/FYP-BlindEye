@@ -9,6 +9,7 @@ import java.util.List;
 
 import data.ColourItem;
 
+//a wrapper of type view RecyclerView that displays the ColourItems
 public abstract class ColourItemListWrapper {
 
     protected final RecyclerView mRecyclerView;
@@ -33,7 +34,7 @@ public abstract class ColourItemListWrapper {
 
     //interface for the ColourItemListWrapper
     public interface ColourItemListWrapperListener {
-        //called when ColoutItem has been clicked on
+        //called when ColourItem has been clicked on
         void onColourItemClicked(@NonNull ColourItem colourItem, @NonNull View colourPreview);
     }
 }

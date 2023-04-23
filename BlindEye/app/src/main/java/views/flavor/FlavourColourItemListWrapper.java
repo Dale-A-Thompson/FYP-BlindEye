@@ -51,7 +51,6 @@ public class FlavourColourItemListWrapper extends ColourItemListWrapper implemen
             @Override
             public void onViewDetachedFromWindow(@NonNull View v) {
                 ((Application) mContext.getApplicationContext()).unregisterActivityLifecycleCallbacks(mActivityLifecycleCallbacks);
-                ;
             }
         });
     }

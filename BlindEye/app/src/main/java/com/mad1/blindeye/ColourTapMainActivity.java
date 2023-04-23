@@ -344,7 +344,7 @@ public class ColourTapMainActivity extends AppCompatActivity implements CameraPr
         Log.d("displaycolour", "previewColour: " + mColourSelectedPreviewText.getText());
     }
 
-    //seeting transY of mCompletedSaveMsg to -mCompletedSaveMsg.getMeasuredHeight() so it's correctly placed before anim
+    //setting transY of mCompletedSaveMsg to -mCompletedSaveMsg.getMeasuredHeight() so it's correctly placed before anim
     protected void confirmCompleteSaveMsg() {
         ViewTreeObserver viewTreeObserver = mCompletedSaveMsg.getViewTreeObserver();
         if (viewTreeObserver.isAlive()) {
